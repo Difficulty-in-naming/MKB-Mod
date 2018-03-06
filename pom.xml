@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>wxmod</groupId>
+  <artifactId>wxmod</artifactId>
+  <version>1.6.5</version>
+  <packaging>jar</packaging>
+  <name>wxmod</name>
+  <description></description>
+  <dependencies>
+    <dependency>
+      <groupId>com.megacrit.cardcrawl</groupId>
+      <artifactId>slaythespire</artifactId>
+      <version>016</version>
+      <scope>system</scope>
+      <systemPath>C:/Project/Other Project/NewWxMod/Lib/desktop-1.0.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.evacipated.cardcrawl</groupId>
+      <artifactId>ModTheSpire</artifactId>
+      <version>2.2.1</version>
+      <scope>system</scope>
+      <systemPath>C:/Project/Other Project/NewWxMod/Lib/ModTheSpire.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>basemod</groupId>
+      <artifactId>basemod</artifactId>
+      <version>1.6.4</version>
+      <scope>system</scope>
+      <systemPath>C:/Project/Other Project/NewWxMod/Lib/BaseMod.jar</systemPath>
+    </dependency>
+  </dependencies>
+  
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+    <build>
+        <finalName>BaseMod</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy file="target/BaseMod.jar" tofile="C:/MyGame/Steam/steamapps/common/SlayTheSpire/mods/CarefullyPrepared.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>
